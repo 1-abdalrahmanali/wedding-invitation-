@@ -7,9 +7,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
   .det-val a:hover {
-  opacity: 0.6;
-  transition: opacity 0.3s;
-}
+    opacity: 0.6;
+    transition: opacity 0.3s;
+  }
   *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 
   body {
@@ -22,7 +22,8 @@
   }
 
   .card {
-    width: 390px;
+    width: 100%; /* جعل العرض مرن ليناسب الموبايلات الصغيرة */
+    max-width: 390px; /* الحفاظ على الحجم المثالي للكارت */
     height: 780px;
     position: relative;
     border-radius: 4px;
@@ -210,17 +211,22 @@
     overflow: hidden;
     box-shadow: 0 5px 18px rgba(0,0,0,0.16);
   }
+  
+  /* تصليح أبعاد الصورة لتملأ الإطار تماماً دون تشويه */
   .ph img {
+    width: 100%;
+    height: 100%;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-  .ph1 {
-    width: 136px; height: 152px;
-    left: 18px; top: 5px;
-    transform: rotate(-2.8deg);
+    object-fit: cover;
   }
-
+  
+  .ph1 {
+    width: 136px; 
+    height: 152px;
+    top: 5px; 
+    left: 50%; 
+    transform: translateX(-50%) rotate(-2.8deg); 
+  }
 
   .t-inv {
     position: absolute;
@@ -457,16 +463,16 @@
       </div>
 
       <div class="det-block">
-  <p class="det-label">Venue &amp; Address</p>
-  <div class="det-sep"></div>
-  <p class="det-val">
-    <a href="https://maps.google.com/maps?vet=10CAAQoqAOahcKEwj4ru-GqsKUAxUAAAAAHQAAAAAQEg..i&pvq=OhYweDA6MHhhNTViNDZlMDhlYTFjNzcy&fvr=1&cs=1&um=1&ie=UTF-8&fb=1&gl=eg&sa=X&ftid=0x14583fa904cc31d3:0xa55b46e08ea1c772" target="_blank" style="text-decoration: none; color: inherit; display: block;">
- AL ANDALUSIA, labela📍
-      <br>
-      <span style="font-size: 11px; opacity: 0.7;">show me the location</span>
-    </a>
-  </p>
-</div>
+        <p class="det-label">Venue &amp; Address</p>
+        <div class="det-sep"></div>
+        <p class="det-val">
+          <a href="https://maps.google.com/maps?vet=10CAAQoqAOahcKEwj4ru-GqsKUAxUAAAAAHQAAAAAQEg..i&pvq=OhYweDA6MHhhNTViNDZlMDhlYTFjNzcy&fvr=1&cs=1&um=1&ie=UTF-8&fb=1&gl=eg&sa=X&ftid=0x14583fa904cc31d3:0xa55b46e08ea1c772" target="_blank" style="text-decoration: none; color: inherit; display: block;">
+            AL ANDALUSIA, labela📍
+            <br>
+            <span style="font-size: 11px; opacity: 0.7;">show me the location</span>
+          </a>
+        </p>
+      </div>
 
       <div class="det-block">
         <p class="det-label">The Venue</p>
